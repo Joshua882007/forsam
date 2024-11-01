@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check on Sam</title>
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hi Sam, how are you?</h1>
+    <input type="text" id="response" placeholder="Type your response here">
+    <button onclick="checkResponse()">Submit</button>
+    <p id="message"></p>
+
+    <script>
+        function checkResponse() {
+            const response = document.getElementById("response").value.toLowerCase();
+            const message = document.getElementById("message");
+
+            if (response.includes("good") || response.includes("great") || response.includes("fine") || response.includes("okay")) {
+                message.textContent = "That's good to hear!";
+            } else {
+                message.textContent = "Oh, I hope you feel better soon!";
+            }
+        }
+    </script>
+
+</body>
+</html>
